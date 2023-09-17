@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-void main() {runApp(MyApp());}
+import 'package:http/http.dart' as http;
+
+void main() {runApp(const MyApp());}
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -9,7 +13,7 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Google Material Design Demo',
         home: Scaffold(
           appBar: AppBar(
-              leading: Icon(Icons.menu),
+              leading: const Icon(Icons.menu),
               title: const Text("Flutter-Funktionsgalerie"),
               backgroundColor: Colors.orange
 
@@ -54,7 +58,7 @@ class MyApp extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
                         ListTile(
-                            leading: Icon(Icons.home, size: 50),
+                            leading: const Icon(Icons.home, size: 50),
                             title: Text("Eintrag Nr. $i"),
                             subtitle: const Text("Dies ist ein Subtitel"),
                             onTap: () => print("Eintrag Nr. $i gedrückt.")
