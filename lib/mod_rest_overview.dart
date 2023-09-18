@@ -34,7 +34,7 @@ class _RestOverviewState extends State<RestOverview> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Details Screen'),
+        title: const Text('Overview Screen'),
       ),
       body: detailsData.isEmpty
           ? const Center(child: CircularProgressIndicator(backgroundColor: Colors.green))
@@ -51,7 +51,10 @@ class _RestOverviewState extends State<RestOverview> {
                         leading: const Icon(Icons.home, size: 50),
                         title: Text(detailsData[i]["name"]),
                         subtitle: Text('ID: ${detailsData[i]["id"]}'),
-                        onTap: () => print("TODO: Detaildaten ausgeben.") // Todo
+                        onTap: () => Navigator.pushNamed(
+                          context,
+                          '/rest-detail',
+                        )
                     )
                   ],
                 )

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'mod_rest_overview.dart';
+import 'mod_rest_detail.dart';
 
 // REST API test endpoints:
 // https://jsonplaceholder.typicode.com/users
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         routes: {
           '/': (context) => HomeScreen(),
           '/rest-overview': (context) => RestOverview(),
+          '/rest-detail': (context) => RestDetail(),
         },
     );
   }
