@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/': (context) => HomeScreen(),
-          '/details': (context) => DetailsScreen(),
+          '/rest-overview': (context) => RestOverview(),
         },
     );
   }
@@ -71,7 +71,7 @@ class HomeScreen extends StatelessWidget {
                       onTap: () {
                         Navigator.pushNamed(
                           context,
-                          '/details',
+                          '/rest-overview',
                         );
                       }
                       //=> print("Jetzt neue Route öffnen.")
@@ -102,12 +102,12 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class DetailsScreen extends StatefulWidget {
+class RestOverview extends StatefulWidget {
   @override
-  _DetailsScreenState createState() => _DetailsScreenState();
+  _RestOverviewState createState() => _RestOverviewState();
 }
 
-class _DetailsScreenState extends State<DetailsScreen> {
+class _RestOverviewState extends State<RestOverview> {
   List <dynamic> detailsData = [];
 
   @override
