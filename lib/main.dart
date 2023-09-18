@@ -137,10 +137,27 @@ class _RestOverviewState extends State<RestOverview> {
         title: Text('Details Screen'),
       ),
       body: detailsData.isEmpty
-          ? Center(child: CircularProgressIndicator())
-          : ListTile(
-        title: Text('Name: ${detailsData[0]["name"]}'),
-        subtitle: Text('ID: ${detailsData[0]["id"]}'),
+          ? const Center(child: CircularProgressIndicator(backgroundColor: Colors.green))
+          : ListView(
+        children: <Widget>[
+          for (int i=0; i<=detailsData.length-1; i++)
+            Card(
+                elevation: 5.0,
+                color: Colors.lightGreen,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    ListTile(
+                        leading: const Icon(Icons.home, size: 50),
+                        title: Text(detailsData[i]["name"]),
+                        subtitle: Text('ID: ${detailsData[i]["id"]}'),
+                        onTap: () => print("TODO: Detaildaten ausgeben.") // Todo
+                    )
+                  ],
+                )
+            )
+
+        ],
       ),
     );
   }
