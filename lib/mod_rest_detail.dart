@@ -4,7 +4,6 @@ import 'dart:convert';
 
 class RestDetail extends StatefulWidget {
   String userId = "";
-  RestDetail({required this.userId});
 
   @override
   _RestDetailState createState() => _RestDetailState();
@@ -22,9 +21,10 @@ class _RestDetailState extends State<RestDetail> {
   Future<void> fetchData() async {
 
     //String ctx = context.toString();
-    final String? userId = ModalRoute.of(context)!.settings.arguments as String?;
-
-    final response = await http.get(Uri.parse('https://jsonplaceholder.typicode.com/users'));
+    // final String? userId = ModalRoute.of(context)!.settings.arguments as String?;
+    //
+    //
+    // final response = await http.get(Uri.parse('https://jsonplaceholder.typicode.com/users'));
 
     // /${ModalRoute.of(context).settings.arguments}
 
@@ -34,13 +34,13 @@ class _RestDetailState extends State<RestDetail> {
 
 
 
-    if (response.statusCode == 200) {
-      setState(() {
-        detailsData = jsonDecode(response.body);
-      });
-    } else {
-      throw Exception('Failed to load data');
-    }
+    // if (response.statusCode == 200) {
+    //   setState(() {
+    //     detailsData = jsonDecode(response.body);
+    //   });
+    // } else {
+    //   throw Exception('Failed to load data');
+    // }
   }
 
   @override

@@ -52,7 +52,8 @@ class _RestOverviewState extends State<RestOverview> {
                         subtitle: Text('ID: ${detailsData[i]["id"]}'),
                         onTap: () => Navigator.pushNamed(
                           context,
-                          '/rest-detail/${detailsData[i]["id"]}',
+                          '/rest-detail',
+                          arguments: {'userId': {detailsData[i]["id"]}},
                         )
                     )
                   ],
