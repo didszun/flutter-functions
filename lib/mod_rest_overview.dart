@@ -19,7 +19,6 @@ class _RestOverviewState extends State<RestOverview> {
   Future<void> fetchData() async {
     final response = await http.get(Uri.parse(
         'https://jsonplaceholder.typicode.com/users'));
-    // /${ModalRoute.of(context).settings.arguments}
 
     if (response.statusCode == 200) {
       setState(() {
@@ -53,7 +52,7 @@ class _RestOverviewState extends State<RestOverview> {
                         subtitle: Text('ID: ${detailsData[i]["id"]}'),
                         onTap: () => Navigator.pushNamed(
                           context,
-                          '/rest-detail',
+                          '/rest-detail/${detailsData[i]["id"]}',
                         )
                     )
                   ],

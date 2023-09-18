@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_functions/route_generator.dart';
 import 'mod_rest_overview.dart';
 import 'mod_rest_detail.dart';
 
@@ -12,16 +13,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Google Material Design Demo',
+        onGenerateRoute: RouteGenerator.generateRoute,
 
-        initialRoute: '/',
-        routes: {
-          '/': (context) => HomeScreen(),
-          '/rest-overview': (context) => RestOverview(),
-          '/rest-detail': (context) => RestDetail(),
-        },
+        // initialRoute: '/',
+        // routes: {
+        //   '/': (context) => HomeScreen(),
+        //   '/rest-overview': (context) => RestOverview(),
+        //   '/rest-detail/:userId': (context) => RestDetail(), // Todo: wrong
+        // },
     );
   }
 }
