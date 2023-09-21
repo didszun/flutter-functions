@@ -29,7 +29,7 @@ class _RestDetailState extends State<RestDetail> {
 
     if (response.statusCode == 200) {
       setState(() {
-        detailsData = jsonDecode(response.body); // TODO: parse json
+        detailsData = jsonDecode(response.body); // TODO: parse json https://gist.github.com/AbhishekDoshi26/7be9d99d7dfd6d8015c74a334b3b94bb
       });
     } else {
       throw Exception('Failed to load data');
