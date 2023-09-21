@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_functions/main.dart';
 import 'package:flutter_functions/mod_rest_overview.dart';
 import 'package:flutter_functions/mod_rest_detail.dart';
+import 'package:flutter_functions/mod_map_example.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -10,6 +11,9 @@ class RouteGenerator {
 
       case '/':
         return MaterialPageRoute(builder: (context) => HomeScreen());
+
+      case '/map':
+        return MaterialPageRoute(builder: (context) =>  MapExample());
 
       case '/rest-overview':
         return MaterialPageRoute(builder: (context) =>  RestOverview());

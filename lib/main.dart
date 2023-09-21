@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_functions/route_generator.dart';
-import 'mod_rest_overview.dart';
-import 'mod_rest_detail.dart';
 
 // REST API test endpoints:
 // https://jsonplaceholder.typicode.com/users
@@ -51,6 +49,26 @@ class HomeScreen extends StatelessWidget {
                       title: const Text("Dialog-Beispiel"),
                       subtitle: const Text("Bei Tap wird Dialogbox gezeigt."),
                       onTap: () => print("Open Alert.")
+                  )
+                ],
+              )
+          ),
+          Card(
+              elevation: 5.0,
+              color: Colors.cyan,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  ListTile(
+                      leading: const Icon(Icons.map, size: 50),
+                      title: const Text("Map Integration"),
+                      subtitle: const Text("flutter_map example."),
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context,
+                          '/map',
+                        );
+                      }
                   )
                 ],
               )
