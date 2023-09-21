@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:url_launcher/url_launcher.dart';
+
+// https://docs.fleaflet.dev/layers/polygon-layer
 
 class MapExample extends StatefulWidget {
   MapExample({super.key});
@@ -18,7 +19,6 @@ class _MapExampleState extends State<MapExample> {
   }
 
   Future<void> fetchData() async {
-
   /*  //final String? userId = ModalRoute.of(context)!.settings.arguments as String?;
 
     final response = await http.get(Uri.parse('https://jsonplaceholder.typicode.com/users/1'));
@@ -37,22 +37,42 @@ class _MapExampleState extends State<MapExample> {
     return FlutterMap(
       options: MapOptions(
         center: LatLng(49.791560300794615, 9.945795763150798),
-        zoom: 9.2,
+        zoom: 18,
       ),
-      nonRotatedChildren: [
-        RichAttributionWidget(
-          attributions: [
-            TextSourceAttribution(
-              'OpenStreetMap contributors',
-              onTap: () =>  launchUrl(Uri.parse('https://openstreetmap.org/copyright')),
-            ),
-          ],
-        ),
-      ],
       children: [
         TileLayer(
           urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-          userAgentPackageName: 'com.example.app',
+          userAgentPackageName: 'org.didszun.app',
+        ),
+        MarkerLayer(
+          markers: [
+            Marker(
+              point: LatLng(49.791560300794615, 9.945795763150798),
+              width: 80,
+              height: 80,
+              builder: (context) => const Icon(
+                  Icons.close_fullscreen,
+                  color: Colors.deepOrange,
+                  shadows: <Shadow>[Shadow(color: Colors.white, blurRadius: 5.0)],
+                  size: 25), // Icon() FlutterLogo(),
+            ),
+          ],
+        ),
+        PolygonLayer(
+          polygons: [
+            Polygon(
+              points: [
+                LatLng(49.7921622630431, 9.94494787530687),
+                LatLng(49.79195424390552, 9.94560665412181),
+                LatLng(49.792134527209704, 9.946329878690388),
+                LatLng(49.792402639600425, 9.945363192385855),
+                ],
+              color: Colors.lightBlueAccent.withOpacity(0.5),
+              isFilled: true,
+              isDotted: true,
+              borderColor: Colors.blue,
+            ),
+          ],
         ),
       ],
     );
