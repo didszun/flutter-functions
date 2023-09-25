@@ -15,13 +15,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Google Material Design Demo',
         onGenerateRoute: RouteGenerator.generateRoute,
-
-        // initialRoute: '/',
-        // routes: {
-        //   '/': (context) => HomeScreen(),
-        //   '/rest-overview': (context) => RestOverview(),
-        //   '/rest-detail/:userId': (context) => RestDetail(), // Todo: wrong
-        // },
     );
   }
 }
