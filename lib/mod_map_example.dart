@@ -34,13 +34,14 @@ class _MapExampleState extends State<MapExample> {
         options: MapOptions(
           center: LatLng(49.791560300794615, 9.945795763150798),
           zoom: 18,
-          maxZoom: 18, // in OSM maximaler Zoom
-
+          maxZoom: 23, // in OSM maximaler Zoom
         ),
         children: [
           TileLayer(
             urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
             userAgentPackageName: 'org.didszun.app',
+            maxZoom: 23,
+            maxNativeZoom: 22,
           ),
           MarkerLayer(
             markers: [
