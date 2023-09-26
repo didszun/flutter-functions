@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_functions/route_generator.dart';
+import 'package:flutter_functions/mat_dialog.dart';
 
 // REST API test endpoints:
 // https://jsonplaceholder.typicode.com/users
@@ -27,7 +28,6 @@ class HomeScreen extends StatelessWidget {
           leading: const Icon(Icons.menu),
           title: const Text("Flutter-Funktionsgalerie"),
           backgroundColor: Colors.orange
-
       ),
       body: ListView(
         children: <Widget>[
@@ -39,9 +39,36 @@ class HomeScreen extends StatelessWidget {
                 children: <Widget>[
                   ListTile(
                       leading: const Icon(Icons.add_alert, size: 50),
+                      title: const Text("Alert-Beispiel"),
+                      subtitle: const Text("Bei Tap wird ein Info-Alert gezeigt."),
+                      onTap: () {
+                        showDialog(
+                            context: context, builder: (BuildContext context) {
+                          return const AlertDialog(
+                            title: Text("Erfolg!"),
+                            content: Text(
+                                "Hier kann eine Erfolgsmeldung stehen."),
+                          );
+                        });
+                      }
+                  )
+                ],
+              )
+          ),
+          Card(
+              elevation: 5.0,
+              color: Colors.purpleAccent,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  ListTile(
+                      leading: const Icon(Icons.question_answer, size: 50),
                       title: const Text("Dialog-Beispiel"),
-                      subtitle: const Text("Bei Tap wird Dialogbox gezeigt."),
-                      onTap: () => print("Open Alert.")
+                      subtitle: const Text("Bei Tap wird eine Dialogbox mit Future-Response gezeigt."),
+                      onTap: () => showDialog(
+                        context: context,
+                        builder: (_) => DialogOverlay(),
+                      ),
                   )
                 ],
               )
