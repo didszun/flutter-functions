@@ -3,6 +3,7 @@ import 'package:flutter_functions/main.dart';
 import 'package:flutter_functions/mod_rest_overview.dart';
 import 'package:flutter_functions/mod_rest_detail.dart';
 import 'package:flutter_functions/mod_map_example.dart';
+import 'package:flutter_functions/mod_account_actions.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -26,6 +27,9 @@ class RouteGenerator {
         else {
           return _errorRoute();
         }
+
+      case '/login':
+        return MaterialPageRoute(builder: (context) =>  AccoutLogin());
 
       default:
         return _errorRoute();

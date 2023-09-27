@@ -114,6 +114,27 @@ class HomeScreen extends StatelessWidget {
                 ],
               )
           ),
+          Card(
+              elevation: 5.0,
+              color: Colors.amber,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  ListTile(
+                      leading: const Icon(Icons.login, size: 50),
+                      title: const Text("Login-Beispiel"),
+                      subtitle: const Text("um sich in einen Account einzuloggen"),
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context,
+                          '/login',
+                        );
+                      }
+                    //=> print("Jetzt neue Route öffnen.")
+                  )
+                ],
+              )
+          ),
           for (int i=1; i<=20; i++)
             Card(
                 elevation: 5.0,
