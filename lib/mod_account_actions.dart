@@ -25,7 +25,7 @@ class _AccoutLoginState extends State<AccoutLogin> {
       if (users[data.name] != data.password) {
         return 'Password does not match.';
       }
-      return null;
+      return ''; // 'LOGGED IN, but no login code implemented, DUDE!!.'; // TODO
     });
   }
 
