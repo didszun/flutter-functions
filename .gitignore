@@ -45,3 +45,4 @@ app.*.map.json
 /ios/Flutter/
 /.idea/
 /flutter_functions.iml
+/pubspec.lock

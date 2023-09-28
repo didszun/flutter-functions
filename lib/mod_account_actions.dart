@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
+//import 'package:http/http.dart' as http;
+//import 'dart:convert';
 
 import 'package:flutter_login/flutter_login.dart';
 import 'package:flutter_functions/dev_login_credentials.dart'; // demo users "users"
@@ -52,7 +52,7 @@ class _AccoutLoginState extends State<AccoutLogin> {
       title: 'login / sign-up',
       //logo: AssetImage('assets/images/ASSET PATH'),
       onLogin: _authUser,
-      //onSignup: _signupUser,
+      onSignup: _signupUser,
 
       loginProviders: <LoginProvider>[
         LoginProvider(
@@ -92,6 +92,19 @@ class _AccoutLoginState extends State<AccoutLogin> {
         ));
       },
       onRecoverPassword: _recoverPassword,
+    );
+  }
+}
+
+class AccoutLogout extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+          leading: const Icon(Icons.menu),
+          title: const Text("LOGOUT (not implemented"),
+          backgroundColor: Colors.red
+      ),
     );
   }
 }

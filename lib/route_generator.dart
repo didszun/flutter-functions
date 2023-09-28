@@ -31,6 +31,9 @@ class RouteGenerator {
       case '/login':
         return MaterialPageRoute(builder: (context) =>  AccoutLogin());
 
+      case '/logout':
+        return MaterialPageRoute(builder: (context) =>  AccoutLogout());
+
       default:
         return _errorRoute();
     }
